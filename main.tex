@@ -1,0 +1,197 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\usepackage[left = 2cm, top = 2cm, right = 2cm, bottom = 2cm]{geometry}
+
+%\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage[section]{placeins}
+\usepackage{xcolor}
+\usepackage{breakcites}
+\usepackage{lineno}
+\usepackage{hyphenat}
+\usepackage{subfiles}
+
+\setlength\columnsep{25pt}
+\definecolor{linkblue}{HTML}{217ce3}
+
+\definecolor{midgreen}{HTML}{666f64}
+
+\usepackage{times}
+
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[colorlinks = true,
+            linkcolor =linkblue,
+            urlcolor  = linkblue,
+            citecolor = linkblue,
+            anchorcolor = linkblue]{hyperref}
+
+
+\usepackage{etoolbox}
+\makeatletter
+% \patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outputbox}{}{%
+%   \errmessage{\noexpand\@combinedblfloats could not be patched}%
+% }%
+\makeatother
+
+
+\usepackage{natbib}
+
+\titlespacing{\section}{0pt}{*3}{*1}
+\titlespacing{\subsection}{0pt}{*2}{*0.5}
+\titlespacing{\subsubsection}{0pt}{*1.5}{0pt}
+
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+\titleformat*{\paragraph}{\normalsize\itshape}
+
+%\usepackage{endfloat}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[space]{grffile}
+\usepackage{latexsym}
+\usepackage{textcomp}
+\usepackage{longtable}
+\usepackage{tabulary}
+\usepackage{booktabs,array,multirow}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{fancyhdr}
+\providecommand\citet{\cite}
+\providecommand\citep{\cite}
+\providecommand\citealt{\cite}
+\newif\iflatexml\latexmlfalse
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}%
+
+\AtBeginDocument{\DeclareGraphicsExtensions{.eps}}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+
+\captionsetup[figure]{name={Figure}}
+\captionsetup{justification=justified}
+\newcommand{\gammaRFT}{\textit{flicker\&gratings }}
+\newcommand{\RFTonly}{\textit{flicker }}
+%TC:incbib
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+\newcommand{\quickwordcount}[1]{%
+  \immediate\write18{texcount -1 -sum -merge -q #1.tex output.bbl > #1-words.sum }%
+  \input{#1-words.sum} words%
+}
+\newcommand{\detailtexcount}[1]{%
+  \immediate\write18{texcount -merge -sum -q #1.tex output.bbl > #1.wcdetail }%
+  \verbatiminput{#1.wcdetail}%
+}
+% abbreviated title
+\newcommand\shorttitle{No evidence for gamma entrainment by rapid flicker}
+% fancy hdr
+\fancyhf{}
+\rhead{\shorttitle}
+\lhead{Duecker et al.}
+\rfoot{\thepage}
+\pagestyle{fancy}
+
+\begin{document}
+%\pagestyle{plain}
+\linenumbers
+%\fontfamily{times}\selectfont
+\title{No evidence for entrainment: endogenous gamma oscillations and rhythmic flicker responses coexist in visual cortex}
+\author{Katharina Duecker\(^1\)*, Tjerk P. Gutteling\(^1\), Christoph S. Herrmann\(^2\), and Ole Jensen\(^1\)*
+}
+%\vspace{-1em}
+\date{}
+\begingroup
+\let\center\flushleft
+\let\endcenter\endflushleft
+\maketitle
+\endgroup
+\doublespacing
+\textbf{Addresses: }
+\(^1\): University of Birmingham, School of Psychology, Centre for Human Brain Health, Birmingham B15 2SA, UK\\
+\(^2\): Carl-von-Ossietzky University of Oldenburg, Faculty VI - Medicine and Health Sciences, Department of Psychology, 26129 Oldenburg, Germany
+
+\textbf{Email: } k.duecker@bham.ac.uk (K.D.; correspondence), tgutteling.gmail.com (T.P.G.), christoph.herrmann@uni-oldenburg.de (C.S.H.), o.jensen@bham.ac.uk (O.J.; correspondence)
+
+\textbf{Contributions:} K.D., C.S.H. and O.J. conceptualised the study; K.D., T.P.G. and O.J. programmed the experiment; K.D. recorded the data; all authors analysed the data and wrote the manuscript. 
+
+
+\textbf{Abbreviated title:} \shorttitle
+
+
+\textbf{Number of pages:} 43
+
+\textbf{Number of figures:} 10
+
+\textbf{Number of Words: } \textit{Abstract:} \quickwordcount{sections/1_abstract}; \textit{Introduction:} \quickwordcount{sections/2_intro_new}; \textit{Discussion:} \quickwordcount{sections/5_discussion}
+
+
+\textbf{Acknowledgements:} This study was funded by a James S. McDonnell Foundation Understanding Human Cognition Collaborative Award (grant number 220020448), the Wellcome Trust Investigator Award in Science (grant number 207550), a BBSRC grant (BB/R018723/1), as well as the Royal Society Wolfson Research Merit Award (awarded to O.J.).
+The authors are grateful to Prof Veikko Jousmaki for providing the light-to-voltage converter and to Jonathan L. Winter, Nina Salman, Ludwig Barbaro, and Roya Jalali for providing help with the MEG recordings and MRI scans. The authors further thank Dr Simon Hanslmayr, Dr Geoffrey Brookshire and Dr Florian Kasten for feedback on the project and manuscript.
+
+\textbf{Conflict of interest statement:} The authors declare no competing financial or non-financial interest.
+
+
+
+\newpage 
+%\pagestyle{fancy}
+\section*{Abstract}
+    \subfile{sections/1_abstract}
+    
+    \textbf{Key words:} Magnetoencephalography; Neural Oscillations; Entrainment; Gamma Oscillations; Frequency Tagging; Flicker; Photic drive
+
+
+% \makenomenclature
+% \printnomenclature[1in]
+% \nomenclature{\textbf{IGF}}{Individual Gamma Frequency}
+% \nomenclature{\textbf{TFR}}{Time Frequency Representation}
+% \nomenclature{\textbf{SOI}}{Sensor of Interest}
+
+
+\section*{Significance Statement}
+We aimed to investigate to what extent ongoing, high frequency oscillations in the gamma band (30-100 Hz) in the human brain can be entrained by a visual flicker. Gamma oscillations have long been suggested to coordinate neuronal firing and enable inter-regional communication. Our results demonstrate that flicker responses cannot hijack the dynamics of ongoing gamma oscillations; rather, the flicker response and the endogenous gamma oscillations coexist in different visual areas. Therefore, while a visual flicker evokes a strong neuronal response even at high frequencies in the gamma-band, it does not entrain endogenous gamma oscillations in visual cortex. This has important implications for interpreting studies investigating the causal and neuroprotective effects of rhythmic sensory stimulation in the gamma band.
+
+%\newpage
+
+\section{Introduction}
+{\label{872912}}
+\subfile{sections/2_intro_new}
+
+\section{Materials and Methods}
+\subfile{sections/3_methods}
+
+{\label{130442}}
+
+\section{Results}
+
+{\label{502277}}
+
+\subfile{sections/4_results}
+
+
+\section{Discussion}
+
+{\label{421360}}
+
+\subfile{sections/5_discussion}
+
+
+
+
+
+%\selectlanguage{english}
+\bibliographystyle{jneurosci}
+
+\bibliography{biblio_doi}
+%\printbibliography
+%\FloatBarrier
+
+
+\end{document}
